@@ -1,0 +1,19 @@
+# -----------------------
+# R session files
+# -----------------------
+.Rhistory
+.RData
+.Rproj.user/
+
+# -----------------------
+# Raw / large data files
+# -----------------------
+data/raw/
+*.csv
+*.csv.gz
+
+# -----------------------
+# OS junk files
+# -----------------------
+.DS_Store
+Thumbs.db
