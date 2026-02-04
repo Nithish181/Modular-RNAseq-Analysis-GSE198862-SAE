@@ -1,6 +1,8 @@
 source(file.path(DIR_SCRIPTS,"00_setup.R"))
 
 subsets <- readRDS(file.path(DIR_PROCESSED,"subsets.rds"))
+# 1 Sample - sample correlation to measure how genes are expressed across samples globally
+# Remind this is just to view does samples share similar genes 
 
 plot_corr <- function(counts, meta, title, out) {
   cor_mat <- cor(counts, method = "pearson")
@@ -21,8 +23,9 @@ plot_corr <- function(counts, meta, title, out) {
 }
 
 #--------------------------------------------------
-#                 VISUALIZATION
+#                 Sample - sample Correlation 
 #-------------------------------------------------
+
 plot_corr(
   subsets$d3$counts,
   subsets$d3$meta,
@@ -43,4 +46,5 @@ plot_corr(
   "Sample Correlation: PCI 3d vs 20d",
   "figures/correlation/pci_day3_vs_day20.png"
 )
+
 
