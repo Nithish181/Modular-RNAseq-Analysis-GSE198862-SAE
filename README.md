@@ -44,19 +44,18 @@ No differential expression testing is performed in this repository; this project
 
 ## Repository structure
 ├── data/
-│ ├── raw/ # Raw count matrix (not tracked if large)
-│ └── processed/ # Filtered counts, logCPM values, cleaned metadata
-│
+│ ├── raw/ 
+│ └── processed/ 
 ├── scripts/
-│ ├── 00_setup.R # Package loading and global setup
-│ ├── 01_download_and_preprocess.R# Normalization and filtering
-│ ├── 02_data_wrangling.R # Experimental design subsetting
-│ ├── 03_sample_correlation.R # Sample–sample correlation analysis
-│ └── 04_pca_analysis.R # PCA visualization
+│ ├── 00_setup.R 
+│ ├── 01_download_and_preprocess.R
+│ ├── 02_data_wrangling.R 
+│ ├── 03_sample_correlation.R 
+│ └── 04_pca_analysis.R 
 │
 ├── figures/
-│ ├── correlation/ # Correlation heatmaps
-│ └── pca/ # PCA plots
+│ ├── correlation/
+│ └── pca/ 
 │
 └── README.md
 
@@ -71,4 +70,5 @@ source("scripts/02_data_wrangling.R")
 source("scripts/03_sample_correlation.R")
 source("scripts/04_pca_analysis.R")
 ````
+
 
