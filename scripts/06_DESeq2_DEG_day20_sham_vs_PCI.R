@@ -73,7 +73,7 @@ res <- results(obj_deseq2)
 deg_results <- as.data.frame(res)
 
 # To calculate overlap between 2 or more methods 
-day3_deseq <- rownames(subset(deg_results, padj < 0.05 & abs(log2FoldChange) > 1))
+day20_deseq <- rownames(subset(deg_results, padj < 0.05 & abs(log2FoldChange) > 1))
 
 #-----------------------------------------------------------------
 #                                   NOTE
@@ -130,6 +130,7 @@ ggplot(deg, aes(x = log2FoldChange, y = logP, color = significance)) +
     x = "log2 Fold Change",
     y = "-log10(adjusted p-value)"
   )
+
 
 
 
