@@ -93,6 +93,9 @@ qlf <- glmLRT(fit, coef = 2)
 res_qlf <- topTags(qlf, n = Inf, adjust.method = "BH")
 res_qlf_df <- res_qlf$table
 
+# to caluclate the overlap between 2 or more methods 
+day20_edger <- rownames(subset(res_qlf_df, FDR < 0.05 & abs(logFC) > 1))
+
 # Load DEG table
 dega <- res_qlf_df
 
@@ -125,4 +128,5 @@ ggplot(dega, aes(x = logFC, y = logP, color = significance)) +
     title = "EdgeR Volcano Plot 20 days (PCI vs Sham)",
     x = "log2 Fold Change",
     y = "-log10(FDR)"
+
   )
