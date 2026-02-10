@@ -69,9 +69,11 @@ Sepsis-Associated-Encephalopathy-SAE-temporal-transcriptomics/
 │   ├── 04_pca_analysis.R
 │   ├── 05_DESeq2_DEG_day3_sham_vs_PCI.R
 │   ├── 06_DESeq2_DEG_day20_sham_vs_PCI.R
-│   ├── 07_edgeR_DEG_day3_sham_vs_PCI.R
-│   ├── 08_edgeR_DEG_day20_sham_vs_PCI.R
-│   └── 09_DEG_template_generalized.R   # planned
+│   ├── 07_DESeq2_DEG_PCI_day3_vs_day20.R # To study disease progression and it is ongoing
+│   ├── 08_edgeR_DEG_day3_sham_vs_PCI.R
+    ├── 09_edgeR_DEG_day20_sham_vs_PCI.R
+    ├── 10_edgeR_DEG_PCI_day3_vs_day20.R  # To study disease progression and it is ongoing
+│   └── 11_DEG_template_generalized.R   # planned
 ├── figures/
 │   ├── correlation/
 │   └── pca/
@@ -89,3 +91,4 @@ source("scripts/01_download_and_preprocess.R")
 source("scripts/02_data_wrangling.R")
 source("scripts/03_sample_correlation.R")
 source("scripts/04_pca_analysis.R")
+
