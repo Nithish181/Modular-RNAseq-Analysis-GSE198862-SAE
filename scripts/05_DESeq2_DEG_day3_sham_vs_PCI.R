@@ -90,6 +90,8 @@ day3_deseq <- rownames(subset(deg_results, padj < 0.05 & abs(log2FoldChange) > 1
 # Refining the log2change values from Deseq2
 resLFC <- lfcShrink(obj_deseq2, coef = "Treatment_PCI_vs_sham", type = "apeglm")
 
+# log2fold shrinkage is done for remove noisy low count genes
+
 res_deseq2 <- resLFC[order(resLFC$padj),]
 
 deg <- as.data.frame(res_deseq2)
@@ -129,6 +131,7 @@ ggplot(deg, aes(x = log2FoldChange, y = logP, color = significance)) +
     x = "log2 Fold Change",
     y = "-log10(adjusted p-value)"
   )
+
 
 
 
