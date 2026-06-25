@@ -46,7 +46,7 @@ D_20_count <- count[, D_20_meta$sampleID, drop = F]
 #------------------------------------------------------------------
 #                     Experimental Design for this study
 #-----------------------------------------------------------------
-# Identifying the up & downregulated genes in 3 days sham vs PCI
+# Identifying the up & downregulated genes in 20 days sham vs PCI
 # PCI == Peritoneal contamination and infection 
 # sham == healthy group
 
