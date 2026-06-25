@@ -133,5 +133,89 @@ ggplot(deg, aes(x = log2FoldChange, y = logP, color = significance)) +
   )
 
 
+#--------------------------------------------------
+# GENE ontology (BP) -- Biological process
+#--------------------------------------------------
+
+library(clusterProfiler)
+library(org.Mm.eg.db)
+
+ensembl_id <- rownames(deg)
+
+background <- bitr(ensembl_id, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db)
+
+ensembl_id_up <- rownames(up_regulated_genes)
+ensembl_id_up_clean <- bitr(ensembl_id_up, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db) 
+
+ego_up <- enrichGO(gene          =ensembl_id_up_clean $SYMBOL,
+                   universe = background$SYMBOL,
+                   OrgDb         = org.Mm.eg.db,
+                   keyType       = "SYMBOL",
+                   ont           = "BP",   # Biological Process
+                   pAdjustMethod = "BH",
+                   pvalueCutoff  = 0.05,
+                   qvalueCutoff  = 0.05)
+dotplot(ego_up, showCategory = 20, title = "Upregulated_day_3_ GO BP")
+
+library(clusterProfiler)
+library(org.Mm.eg.db)
+ensembl_id_down <- rownames(down_regulated_genes)
+ensembl_id_down_clean <- bitr(ensembl_id_down, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db) 
+
+
+ego_up <- enrichGO(gene          = ensembl_id_down_clean$SYMBOL,
+                   universe = background$SYMBOL,
+                   OrgDb         = org.Mm.eg.db,
+                   keyType       = "SYMBOL",
+                   ont           = "BP",   # Biological Process
+                   pAdjustMethod = "BH",
+                   pvalueCutoff  = 0.05,
+                   qvalueCutoff  = 0.05)
+dotplot(ego_up, showCategory = 20, title = "downregulated_day_3 - GO BP")
+
+
+#--------------------------------------------------
+# GENE ontology (MF) -- Molecular Function
+#--------------------------------------------------
+
+
+library(clusterProfiler)
+library(org.Mm.eg.db)
+
+ensembl_id <- rownames(deg)
+
+background <- bitr(ensembl_id, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db)
+
+ensembl_id_up <- rownames(up_regulated_genes)
+ensembl_id_up_clean <- bitr(ensembl_id_up, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db) 
+
+ego_up <- enrichGO(gene          =ensembl_id_up_clean $SYMBOL,
+                   universe = background$SYMBOL,
+                   OrgDb         = org.Mm.eg.db,
+                   keyType       = "SYMBOL",
+                   ont           = "MF",   # Molecular function
+                   pAdjustMethod = "BH",
+                   pvalueCutoff  = 0.05,
+                   qvalueCutoff  = 0.05)
+dotplot(ego_up, showCategory = 20, title = "Upregulated_day_3_ GO MF")
+
+library(clusterProfiler)
+library(org.Mm.eg.db)
+ensembl_id_down <- rownames(down_regulated_genes)
+ensembl_id_down_clean <- bitr(ensembl_id_down, fromType = "ENSEMBL", toType = "SYMBOL", OrgDb = org.Mm.eg.db) 
+
+
+ego_up <- enrichGO(gene          = ensembl_id_down_clean$SYMBOL,
+                   universe = background$SYMBOL,
+                   OrgDb         = org.Mm.eg.db,
+                   keyType       = "SYMBOL",
+                   ont           = "MF",   # Molecular Function
+                   pAdjustMethod = "BH",
+                   pvalueCutoff  = 0.05,
+                   qvalueCutoff  = 0.05)
+dotplot(ego_up, showCategory = 20, title = "downregulated_day_3 - GO MF")
+
+
+
 
 
