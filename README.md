@@ -37,7 +37,6 @@ The EDA component focuses on pre-DE validation and includes:
 Exploratory analyses compare:
 - 3-day sham vs 3-day PCI samples  
 - 20-day sham vs 20-day PCI samples  
-- PCI samples across 3 days vs 20 days to assess temporal progression
 
 ---
 
