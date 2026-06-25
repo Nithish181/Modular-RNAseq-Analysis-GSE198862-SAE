@@ -48,9 +48,6 @@ Following EDA, differential expression analysis is implemented as **contrast-spe
 Current DEG analyses focus on:
 - Day-3 sham vs PCI  
 - Day-20 sham vs PCI  
-- Temporal comparison of PCI samples (Day-3 vs Day-20)
-
-At this stage, the comparison between DESeq2 and edgeR is **qualitative and contrast-driven**, intended to validate biological trends and model behavior rather than to serve as a large-scale benchmarking study. Refactoring toward a generalized and reusable DEG framework is planned after these case studies are stabilized.
 
 ---
 
@@ -69,14 +66,16 @@ Sepsis-Associated-Encephalopathy-SAE-temporal-transcriptomics/
 │   ├── 04_pca_analysis.R
 │   ├── 05_DESeq2_DEG_day3_sham_vs_PCI.R
 │   ├── 06_DESeq2_DEG_day20_sham_vs_PCI.R
-│   ├── 07_DESeq2_DEG_PCI_day3_vs_day20.R # To study disease progression and it is ongoing
-│   ├── 08_edgeR_DEG_day3_sham_vs_PCI.R
-│   ├── 09_edgeR_DEG_day20_sham_vs_PCI.R
-│   ├── 10_edgeR_DEG_PCI_day3_vs_day20.R  # To study disease progression and it is ongoing
-│   └── 11_DEG_template_generalized.R   # planned
+│   ├── 07_edgeR_DEG_day3_sham_vs_PCI.R
+│   ├── 08_edgeR_DEG_day20_sham_vs_PCI.R
+│   
 ├── figures/
 │   ├── correlation/
 │   └── pca/
+|   └── Deseq2_day_3_results/
+|   └── Deseq2_day_20_results/
+|   └── EdgeR Day_3_results /
+|   └── EdgeR Day_20_results
 └── README.md
 </pre>
 
